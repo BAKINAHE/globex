@@ -1,71 +1,60 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-}
+<head>
+  <style>
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+    }
+    .header h1 {
+      margin: 0;
+    }
+    .header a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .header .menu-icon {
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .header .menu {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      background-color: #fff;
+      padding: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.26);
+    }
+    .header .menu a {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Globex E-Commerce</h1>
+    <a class="menu-icon">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav class="menu">
+      <a href="#">Catégories de produits</a>
+      <a href="#">Propositions</a>
+      <a href="#">Informations sur la sécurité</a>
+    </nav>
+  </header>
+  <script>
+    const menuIcon = document.querySelector('.menu-icon');
+    const menu = document.querySelector('.menu');
 
-.menu-icon {
-  width: 30px;
-  height: 20px;
-  background-color: gray;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.side-menu {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background-color: white;
-  padding: 20px;
-  transition: all 0.3s ease;
-}
-
-.side-menu.open {
-  left: 0;
-}
-
-.side-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.side-menu ul li a {
-  display: block;
-  padding: 10px;
-  color: black;
-  text-decoration: none;
-}
-    </style>
-  </head>
-  <body>
-    <div class="header">
-      <a href="#" class="menu-icon"></a>
-      <h1>Globex</h1>
-    </div>
-  
-    <div class="side-menu">
-      <ul>
-        <li><a href="#">Catégories de produits</a></li>
-        <li><a href="#">Propositions</a></li>
-        <li><a href="#">Sécurité</a></li>
-      </ul>
-    </div>
-  
-    <script>
-      const menuIcon = document.querySelector('.menu-icon');
-const sideMenu = document.querySelector('.side-menu');
-
-menuIcon.addEventListener('click', function() {
-  sideMenu.classList.toggle('open');
-});
-    </script>
-  </body>
+    menuIcon.addEventListener('click', function() {
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+  </script>
+</body>
 </html>
